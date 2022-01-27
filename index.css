@@ -1,13 +1,63 @@
+html { height: 100%; overflow:auto; }
+body { height: 100%; }
+
 #main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#github-container {
+#github-container, #repos-container {
   display: flex;
+  max-width: 1400px;
+  width: 100%;
 }
 
 ul {
   list-style: none;
+}
+
+ul#user-list, ul#repos-list {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user {
+  display: flex;
+  margin: 0 0px 15px;
+  padding: 15px;
+  min-width: 300px;
+}
+
+.user:last-child {
+  margin-right: auto;
+  margin-left: 15px;
+}
+
+.user h2 {
+  margin: 0;
+}
+
+.user p {
+  margin: 6px 0;
+}
+
+.user img {
+  max-width: 80px;
+  max-height: 80px;
+  margin-right: 20px;
+}
+
+li.repo {
+  min-width: 33%;
+}
+
+h2.repo-title {
+  width: 100%;
+}
+
+.link-container, input[type='submit'] {
+  cursor: pointer;
 }

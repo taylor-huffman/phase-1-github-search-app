@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-const main = document.querySelector('#main')
 const form = document.querySelector('form')
 const userList = document.getElementById('user-list')
 const reposList = document.getElementById('repos-list')
@@ -16,8 +15,15 @@ const userSearch = (e) => {
     })
   }
 
+  const scrollToTop = () => {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+      })
+  }
+
   const fetchRepos = (e) => {
-        debugger
+        scrollToTop()
         fetch(`https://api.github.com/users/${e.currentTarget.children[0].textContent}/repos`)
         .then(function (response) {
             return response.json();
@@ -56,7 +62,6 @@ const userSearch = (e) => {
             let p = document.createElement('p')
             let img = document.createElement('img')
             div.classList.add('user')
-            // a.href = renderRepos()
             repoLinkContainer.classList.add('link-container')
             repoLinkContainer.addEventListener('click', fetchRepos)
             img.src = element.avatar_url

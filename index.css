@@ -51,7 +51,7 @@ ul#user-list, ul#repos-list {
 }
 
 li.repo {
-  min-width: 33%;
+  min-width: 50%;
 }
 
 h2.repo-title {
